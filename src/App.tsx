@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Button from "./Button";
 import Card from "./Card";
 import shoe1 from './assets/show1.jpeg'
@@ -11,6 +11,19 @@ const App = () => {
     setShowText((prev) => !prev);
   };
 
+
+  const ref = useRef(5);
+
+
+  const printNumInStr = (num:number) : string =>{
+
+
+    console.log(num.toString());
+
+    return num.toString();
+  
+
+  }
 
   const CardAlert = () =>{
 
@@ -35,6 +48,8 @@ const App = () => {
 
       <Card
       onclickcard={CardAlert}
+      onkeydown={printNumInStr}
+    
         cardImg={shoe1}
         cardTitle="Card Title"
         cardContent=" the 1500s, when an unknown printer took a galley of type and scrambled 

@@ -4,11 +4,12 @@ type CardProps = {
   cardContent: string;
   style:React.CSSProperties;
   onclickcard: () => void;
+  onkeydown:(num:number) => string;
 };
 
-const Card = ({style,onclickcard,cardTitle,cardImg,cardContent}:CardProps) => {
+const Card = ({style,onclickcard, onkeydown, cardTitle,cardImg,cardContent}:CardProps) => {
   return (
-    <div style={style} className="h-[30rem] hover:text-shadow-violet-950 space-y-2 p-5 w-80 rounded-xl shadow-2xl bg-blue-200" onClick={onclickcard}>
+    <div onMouseEnter={() => onkeydown(5)} style={style} className="h-[30rem] hover:text-shadow-violet-950 space-y-2 p-5 w-80 rounded-xl shadow-2xl bg-blue-200" onClick={onclickcard}>
         <img src={cardImg} className="h-1/2 object-cover w-full" alt="" />
       <h3 className="text-3xl text-center">{cardTitle}</h3>
       <p className="">{cardContent}</p>
