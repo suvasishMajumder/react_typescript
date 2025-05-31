@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Button from "./Button";
 import Card from "./Card";
 import shoe1 from './assets/show1.jpeg'
@@ -12,7 +12,7 @@ const App = () => {
   };
 
 
-  const ref = useRef(5);
+
 
 
   const printNumInStr = (num:number) : string =>{
