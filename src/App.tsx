@@ -4,24 +4,9 @@ import Card from "./Card";
 import shoe1 from "./assets/show1.jpeg";
 import Input from "./Input";
 import { CheckBox } from "./CheckBox";
+import type {User} from './types/types'
 
 
-
-type User = {
-// "userId": 1,
-// "id": 1,
-// "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-// "body": "quia et suscipit\nsuscipit recusandae consequuntur 
-// expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
-
-userId:number;
-id:number;
-title:string;
-body:string;
-
-
-
-}
 
 const App = () => {
 

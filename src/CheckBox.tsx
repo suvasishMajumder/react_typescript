@@ -1,21 +1,4 @@
-
-
-interface CheckBoxPropType{
-
-    children?: React.ReactNode;
-    htmlFor?:string;
-    labelValue:string;
-    className:string;
-   
-
-}
-
-
-interface finalCheckBoxProp extends CheckBoxPropType{
-
-     style: React.CSSProperties;
-
-}
+import type { finalCheckBoxProp } from "./types/types"
 
 
 export const CheckBox = ({children,style, htmlFor , labelValue, className, ...rest}:finalCheckBoxProp) => {
