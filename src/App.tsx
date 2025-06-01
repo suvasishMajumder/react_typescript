@@ -42,7 +42,7 @@ const App = () => {
 const parsedData = await response.json();
         
 setData(parsedData);
-console.log(parsedData)
+console.log(data)
         
 
       } catch (error) {
