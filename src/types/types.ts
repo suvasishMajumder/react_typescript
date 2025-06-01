@@ -44,5 +44,5 @@ export type ButtonProps = {
   btnTextColor: string;
   btnBgColor: string;
   btnBorderColor?: string; //I am making this as optional by using a '?' in the type definition.
-    onclickbtn:() => void;
+onclickbtn:() => void;
 };
