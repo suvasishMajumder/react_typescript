@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Button from "./Button";
 import Card from "./Card";
 import shoe1 from "./assets/show1.jpeg";
@@ -11,6 +11,13 @@ import type {User} from './types/types'
 const App = () => {
 
   const [data, setData] = useState<User[] | null>([]);
+const btnRef  = useRef<HTMLButtonElement | null>(null);
+
+const printRefCounter = () =>{
+
+console.log(btnRef?.current)
+
+}
 
 
   useEffect(() => {
@@ -112,8 +119,46 @@ console.log(data);
           border: "3px dashed blue",
         }}
       />
+
+
+<button onClick={printRefCounter} ref={btnRef} 
+className="bg-blue-500 hover:bg-blue-700 cursor-pointer text-white font-bold py-2 px-4 rounded">
+ Click
+</button>
+
     </div>
   );
 };
 
 export default App;
+
+
+
+//Notes on setting Typescript types on Refs (useRef variables)
+
+
+/*
+
+you should use such types (useRef<HTMLXElement | null>) for all ref variables in TypeScript React — 
+it’s the recommended and type-safe way to handle refs for DOM elements.
+
+✅ Example Patterns for Common HTML Elements
+Here are common examples you can safely use throughout your app:
+
+HTML Element	              Ref Type
+button	                  `useRef<HTMLButtonElement
+input                    	`useRef<HTMLInputElement
+textarea	                `useRef<HTMLTextAreaElement
+form	                    `useRef<HTMLFormElement
+div, span, etc.	          `useRef<HTMLDivElement
+img	                      `useRef<HTMLImageElement
+select	                  `useRef<HTMLSelectElement
+
+🧠 Why null is included?
+On first render, refs are null until the DOM is mounted.
+
+That's why the full type is HTMLXElement | null.
+
+
+
+*/
